@@ -1,0 +1,32 @@
+[versions]
+koltin = "1.9.20"
+firebase-analitics = "21.5.0"
+okhttp3 = "4.10.0"
+gson = "2.10.1"
+androidx-navigation = "2.7.5"
+androidx-recyclerview = "1.3.2"
+androidx-core = "1.12.0"
+androidx-appcompat = "1.6.1"
+androidx-constraintlayout = "2.1.4"
+google-material = "1.10.0"
+android-plugin = "8.1.3"
+
+[libraries]
+firebase-analitics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebase-analitics" }
+okhttp3-client = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3" }
+okhttp3-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidx-navigation" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "androidx-recyclerview" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+google-material = { group = "com.google.android.material", name = "material", version.ref = "google-material" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "koltin" }
+google-services = { id = "com.google.gms.google-services", version = "4.4.0" }

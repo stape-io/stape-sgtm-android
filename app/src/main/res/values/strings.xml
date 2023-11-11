@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SGTM Sample</string>
+    <string name="title_activity_main">SGTM Sample</string>
+
+    <string name="main_fragment_label">SGTM Sample App</string>
+    <string name="click_me">Click Me!</string>
+</resources>
