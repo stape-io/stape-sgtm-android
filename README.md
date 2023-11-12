@@ -84,7 +84,7 @@ analytics.logEvent("event4") {
 The `FirebaseAnalyticsAdapter` provides absolutely the same API as the Firebase Analytics instance.
 It means that you can simple replace the provided types without a lot of changes.
 
-## Trying sample app:
+## Trying sample app
 
 If you desire to try the sample app, please, follow the next steps:
 
@@ -93,8 +93,7 @@ If you desire to try the sample app, please, follow the next steps:
 3. Create a Firebase project with enabled Analytics;
 4. Generate your own `google-services.json` file and put it into the `app` folder;
 5. Create `stape.properties` file in the `app` folder and put your Stape domain name into it as a
-   value for `stape.url` property.
-   Example: ```properties server.host=yourdomain.com```;
+   value for `stape.url` property. Example: ```server.host=yourdomain.com```;
 6. Rebuild the app.
 
 ## License
