@@ -47,7 +47,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":sdk"))
+//    implementation(project(":sdk"))
+
+    implementation("io.stape:android-sgtm:1.0-SNAPSHOT")
 
     implementation(libs.firebase.analitics)
 
