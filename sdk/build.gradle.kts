@@ -1,5 +1,6 @@
 import org.gradle.util.internal.GUtil.loadProperties
 import java.net.URI
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.library)
@@ -43,7 +44,16 @@ android {
     }
 }
 
-private val properties = loadProperties(project.rootDir.resolve("signing/sign.properties"))
+private val signingProperties = runCatching {
+    loadProperties(project.rootDir.resolve("signing/signing.properties"))
+}.getOrElse {
+    logger.warn(
+        "The signing/signing.properties file is missing.\n" +
+                "Publishing to the MavenCentral repository will not work.\n" +
+                "Please, contact the project maintainer."
+    )
+    Properties()
+}
 
 publishing {
     publications {
@@ -92,19 +102,21 @@ publishing {
             val repoName = if (publicationVersion.endsWith("SNAPSHOT")) "snapshot" else "release"
 
             name = "MavenCentral"
-            url = URI.create(properties.getProperty("repository.$repoName.url"))
+
+            url = URI.create(project.findProperty("repository.$repoName.url") as String)
+            logger.info("Publishing to $repoName: $url")
 
             credentials {
-                username = properties.getProperty("repository.username")
-                password = properties.getProperty("repository.password")
+                username = signingProperties.getProperty("repository.username")
+                password = signingProperties.getProperty("repository.password")
             }
         }
     }
 }
 
 signing {
-    val signingSecretKey = properties.getProperty("signing.secretKey")
-    val signingPassword = properties.getProperty("signing.password")
+    val signingSecretKey = signingProperties.getProperty("signing.secretKey")
+    val signingPassword = signingProperties.getProperty("signing.password")
 
     useInMemoryPgpKeys(signingSecretKey, signingPassword)
     sign(publishing.publications["release"])
