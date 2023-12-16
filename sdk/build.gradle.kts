@@ -60,7 +60,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "io.stape"
             artifactId = "android-sgtm"
-            version = "1.0-SNAPSHOT"
+            version = "1.0"
 
             afterEvaluate {
                 from(components["release"])
