@@ -15,6 +15,16 @@ After that it sends it as an ordinary event.
 
 ## Usage
 
+### Download
+
+[![GitHub release](https://img.shields.io/github/release/stape-io/stape-sgtm-android.svg)](https://central.sonatype.com/artifact/io.stape/android-sgtm/overview)
+
+Add the dependency to your build.gradle file:
+```kotlin
+implementation("io.stape:android-sgtm:1.0")
+```
+Make use you're using the latest verstion of SDK. 
+
 ### Initialization
 
 To use the Stape SDK you need to create an instance of the `Stape` class.
