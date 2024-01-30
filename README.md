@@ -1,4 +1,4 @@
-# Android Stape SDK
+# Stape sGTM Android SDK
 
 ## Overview
 
